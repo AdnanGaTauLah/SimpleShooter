@@ -25,10 +25,26 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
+
+
 private:
 	UPROPERTY(VisibleAnywhere)
 	USceneComponent* Root;
 
 	UPROPERTY(VisibleAnywhere)
 	USkeletalMeshComponent* Mesh;
+
+	UPROPERTY(EditAnywhere)
+	class UParticleSystem* MuzzleFlash;
+
+	UPROPERTY(EditAnywhere)
+	class UParticleSystem* HitParticle;
+
+	UPROPERTY(EditAnywhere)
+	float MaxRange = 1000;
+
+	UPROPERTY(EditAnywhere)
+	float Damage = 10;
+
+	TSubclassOf<class UDamageType> DamageType;
 };
